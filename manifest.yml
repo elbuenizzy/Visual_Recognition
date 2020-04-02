@@ -1,0 +1,6 @@
+applications:
+- path: .
+  memory: 64M
+  instances: 1
+  name: AnalizadorTacos_876787089
+  disk_quota: 1024M

@@ -1,0 +1,16 @@
+.img-s
+{
+height: 100px;
+width: 100px;
+}
+form
+{
+display: flex;
+flex-direction: column;
+align-content: center;
+}
+
+#sdb
+{
+  margin-top: 10px;
+}

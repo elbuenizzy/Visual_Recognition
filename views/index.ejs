@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/style.css" type="text/css" >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <title>Analizador de Tacos</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Analizador de Perros</h1>
+    <%= typeof msg != 'undefined' ? msg : '' %>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <div class="file-field input-field">
+        <div class="btn indigo darken-2">
+          <span>Archivo</span>
+          <input name="myImage" type="file">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+
+      <button type="submit" class="btn deep-purple accent-3" id="sb">Clasificador personalizado</button>
+      <button type="submit" class="btn" formaction="/upload2" id="sdb">Clasificador general</button>
+
+    </form>
+
+    <br>
+    <img src="<%= typeof file != 'undefined' ? file : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI3SURBVGhD7Zc/SFVRAIdfFCFhUIOhDjaICE1FSP7JzcFFcAlpc3BxMhojgiAQKgRBBBEXERIhaHIw2pSWJhF0aXBys5ISLLG+39UTV++53nt91+e5j/PBh+/cp97z8e45796Sx+NJ5GYVeA1Lf6vASfw/2C6gvzASUkSG0Ye4hA9xDadDavDG4ctEnAy5h59wHzWfTRzBSxiHcyHtuIuaxx/8cfRaTmAczoWsoeYwg7WoT6EPTVwn2nAqpBV1/i28qgMhRlHvjQWjKE6FdKHOvxKMjjOIem82GEU5U0gbPjh8mSv1eIA/sVEHQrxDze15MIqSOUQR33EdtT3mzQfUHLRW+vEhanI6pnXShDYyhZgI83tvMG/q0Cz4sHs4gHGkDglHLOJv1D7fgXmjh6OnqO+SzziFd/A0UoWEI+bwMr48Gp/XJZaVxBBbhND2uIo6/lYHQmjvb8FbwagynBoSF2G4i+YSe4KvUZfDN9TfbGADVoLYkKQIg7nETqotVD8rFWMNSRshdIkt4Xt8hr2onUd3rV9Q/0Pr6LxjrCFpI5I4GaP7pPsWr2O5WEPyiDCEY+L8iuVu49aQvCIMilnAjxb1SemcumV/gWc9rzUkz4gkruArNA9Ry3gbs2INuQi6UU+COr/W6GPMgjMhQpfgPJp56Ja9J6Xj6EyIQc8eO2jmk0WnQkQz6rvJtkHYNJuGcyFZcWqNlIMPcQ0f4hrVHfKogE5jJKTIBiG61S66Q+jxeKqfUukfSeftN1I2v2YAAAAASUVORK5CYII=' %>" class="img-s" >
+  <!-- <a href="https://icons8.com">Icon pack by Icons8</a> -->
+    <p><%= typeof data != 'undefined' ? data : '' %></p>
+
+    <table>
+        <thead>
+          <tr>
+              <th>Tipo-Taco</th>
+              <th>Probabilidad</th>
+              <th>Jerarquía de Tipos</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><%= typeof clas != 'undefined' ? clas : '' %></td>
+            <td><%= typeof sc != 'undefined' ? Math.floor(sc * 100) + "%" : '' %></td>
+            <td><%= typeof th != 'undefined' ? Math.floor(th * 100) + "%" : '' %></td>
+          </tr>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+</html>
